@@ -1,0 +1,90 @@
+---
+title: "WorkSheet3A"
+author: "Khylle irvgard andigan"
+date: "2024-09-30"
+output: pdf_document
+---
+'''{r}
+LETTERS
+letters
+
+first_11_upper <- LETTERS[1:11]
+first_11_lower <- letters[1:11]
+
+odd_upper <- LETTERS[seq(1, 26, by=2)]
+odd_lower <- letters[seq(1, 26, by=2)]
+
+vowels_upper <- c("A", "E", "I", "O", "U")
+vowels_lower <- c("a", "e", "i", "o", "u")
+
+last_5_lower <- letters[22:26]
+letters_15_to_24 <- letters[15:24]
+
+average_temperatures <- c(42, 39, 34, 34, 30, 27)
+
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+
+temp <- c(42, 39, 34, 34, 30, 27)
+
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+temp <- c(42, 39, 34, 34, 30, 27)
+
+data <- data.frame(City = city, Temperature = temp)
+data
+names(data) <- c("City", "Temperature")
+str(data)
+
+data[3, ]
+data[4, ]
+
+highest_temp_city <- data[data$Temperature == max(data$Temperature), ]
+lowest_temp_city <- data[data$Temperature == min(data$Temperature), ]
+
+highest_temp_city
+lowest_temp_city
+
+data <- c(1:8, 11:14)
+my_matrix <- matrix(data, nrow = 3, ncol = 4, byrow = TRUE)
+my_matrix
+result_matrix <- my_matrix * 2
+print(result_matrix)
+row_2 <- my_matrix[2, ]
+print(row_2)
+subset_columns <- my_matrix[1:2, 3:4]
+print(subset_columns)
+row_3_columns_2_3 <- my_matrix[3, 2:3]
+print(row_3_columns_2_3)
+column_4 <- my_matrix[, 4]
+print(column_4)
+rownames(my_matrix) <- c("isa", "dalawa", "tatlo")
+colnames(my_matrix) <- c("uno", "dos", "tres", "quatro")
+print(my_matrix)
+dim(my_matrix) <- c(6, 2)
+print(my_matrix)
+
+#ARRAY
+my_array <- array(c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1))
+my_array
+
+values <- c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+
+repeated_values <- rep(values, each = 2)
+
+my_array_3d <- array(repeated_values, dim = c(2, 4, 3))
+
+print(my_array_3d)
+
+dim(my_array_3d)
+
+rownames(my_array_3d) <- letters[1:2]  # 'a', 'b'
+
+colnames(my_array_3d[,,1]) <- LETTERS[1:4]  # 'A', 'B', 'C', 'D'
+colnames(my_array_3d[,,2]) <- LETTERS[1:4]
+colnames(my_array_3d[,,3]) <- LETTERS[1:4]
+
+dimnames(my_array_3d) <- list(rownames(my_array_3d), colnames(my_array_3d[,,1]), 
+                               c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array"))
+
+my_array_3d
+'''
